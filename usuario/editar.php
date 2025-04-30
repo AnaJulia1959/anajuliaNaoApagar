@@ -1,7 +1,7 @@
 <?php
 $id = $_GET["id"];
 include_once "../class/usuario.class.php";
-include_once "../class/usuarioDAO.php";
+include_once "../class/usuarioDAO.class.php";
 
 $objDAO = new usuarioDAO();
 $retorno = $objDAO->retornaUnico($id);
@@ -19,7 +19,7 @@ $retorno = $objDAO->retornaUnico($id);
 
 <body>
     <h2>Cadastro de Usuário</h2>
-    <form action="inserir_ok.php" method="post">
+    <form action="editar_ok.php" method="post">
         Nome: <input type="text" name="nome" id="nome" value="<?=$retorno['nome']?>"><br>
         <br>Email: <input type="email" name="email" id="email" value="<?=$retorno['email']?>"><br>
         <br>Senha: <input type="password" name="senha" id="senha" value="<?=$retorno['senha']?>"><br>

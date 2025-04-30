@@ -12,7 +12,7 @@ class usuarioDAO
     }
     public function inserir(usuario $obj){
         $sql = $this->conexao->prepare(
-            "INSERT INTO usuarios (nome,email, senha) VALUES (:nome, :email, :senha)"
+            "INSERT INTO usuario (nome,email, senha) VALUES (:nome, :email, :senha)"
         );
 
         $sql -> bindValue(":nome", $obj->getNome());
@@ -34,6 +34,25 @@ class usuarioDAO
         return $sql->fetch();
     }
 
-}
+    public function editar(usuario $obj){
+        $sql = $this->conexao->prepare(
+            "UPDATE usuario SET nome=:nome, email=:email, senha=:senha WHERE id=:id"
+        );
 
+        $sql -> bindValue(":nome", $obj->getNome());
+        $sql -> bindValue(":email", $obj->getEmail());
+        $sql -> bindValue(":senha", $obj->getSenha());
+        $sql -> bindValue(":id", $obj->getId());
+        return $sql->execute();
+
+    }
+
+    public function delete($id){
+        $sql = $this->conexao->prepare("DELETE FROM usuario WHERE id=:id");
+        $sql->bindValue(":id", $id);
+        
+        return $sql->execute();;
+    }
+
+}
 ?>

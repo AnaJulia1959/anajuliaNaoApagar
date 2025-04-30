@@ -1,6 +1,6 @@
 <?php
 include_once "../class/usuario.class.php";
-include_once "../class/usuarioDAO.php";
+include_once "../class/usuarioDAO.class.php";
 
 $objDAO = new usuarioDAO();
 $retorno = $objDAO->listar();

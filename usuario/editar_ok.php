@@ -1,7 +1,6 @@
 <?php
 include_once "../class/usuario.class.php";
 include_once "../class/usuarioDAO.class.php";
-
 // echo "<pres>";
 // print_r(value: $_POST);
 // echo "<br>", $_POST["nome"], "<br>";
@@ -11,20 +10,15 @@ $obj = new usuario();
 $obj->setNome($_POST["nome"]);
 $obj->setEmail($_POST["email"]);
 $obj->setSenha($_POST["senha"]);
+$obj->setId($_POST["id"]);
 
-$nomeImagem = $_FILES["imagem"]["name"];
-$nomeTmp = $_FILES["imagem"]["tmp_name"];
-$diretorio = "../img/".$nomeImagem;
-if(move_uploaded_file($nomeTmp, $diretorio)){
-    
-}
 
 
 $objDAO = new usuarioDAO();
-$retorno = $objDAO->inserir($obj);
+$retorno = $objDAO->editar($obj);
 if ($retorno)
-    echo "Cadastra com sucesso!";
+    echo "Editado com sucesso!";
 else
-    echo "Erro ao cadastrar";
+    echo "Erro ao editar";
 
 ?>
