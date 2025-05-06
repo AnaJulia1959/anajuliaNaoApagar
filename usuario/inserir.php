@@ -10,9 +10,9 @@
     <form action="inserir_ok.php" method="post" enctype="multipart/form-data">
         Nome: <input type="text" name="nome" id="nome"><br>
         <br>Email: <input type="email" name="email" id="email"><br>
-        <br>Senha: <input type="password" name="senha" id="senha"><br>
+        <br>Senha: <input type="password" name="senha" id="senha"><br><br>
         Imagem:
-        <input type="file" name="imagem"/>
+        <input type="file" name="imagem"/><br>
         <br><button type="submit">Enviar</button>
     </form>
 </body>

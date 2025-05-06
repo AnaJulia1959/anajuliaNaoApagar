@@ -12,12 +12,13 @@ class usuarioDAO
     }
     public function inserir(usuario $obj){
         $sql = $this->conexao->prepare(
-            "INSERT INTO usuario (nome,email, senha) VALUES (:nome, :email, :senha)"
+            "INSERT INTO usuario (nome,email, senha, imagem) VALUES (:nome, :email, :senha, :imagem)"
         );
 
         $sql -> bindValue(":nome", $obj->getNome());
         $sql -> bindValue(":email", $obj->getEmail());
         $sql -> bindValue(":senha", $obj->getSenha());
+        $sql -> bindValue(":imagem", $obj->getImagem());
         return $sql->execute();
 
     }

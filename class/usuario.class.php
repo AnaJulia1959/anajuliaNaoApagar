@@ -5,6 +5,19 @@ class usuario
     private $nome;
     private $email;
     private $senha;
+    private $imagem;
+
+    
+    public function getImagem(): mixed
+    {
+        return $this->imagem;
+    }
+
+    public function setImagem($imagem)
+    {
+        $this->imagem = $imagem;
+    }
+
 
     public function getId(): mixed
     {

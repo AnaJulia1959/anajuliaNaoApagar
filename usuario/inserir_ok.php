@@ -16,7 +16,7 @@ $nomeImagem = $_FILES["imagem"]["name"];
 $nomeTmp = $_FILES["imagem"]["tmp_name"];
 $diretorio = "../img/".$nomeImagem;
 if(move_uploaded_file($nomeTmp, $diretorio)){
-    
+    $obj->setImagem($nomeImagem);
 }
 
 
