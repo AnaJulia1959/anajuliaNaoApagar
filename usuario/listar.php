@@ -1,4 +1,8 @@
 <?php
+session_start();
+if(!isset($_SESSION["login"])){
+    header("location:login.php");
+}
 include_once "../class/usuario.class.php";
 include_once "../class/usuarioDAO.class.php";
 

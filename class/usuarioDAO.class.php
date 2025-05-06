@@ -55,5 +55,20 @@ class usuarioDAO
         return $sql->execute();;
     }
 
+    public function login(usuario $obj){
+        $sql = $this->conexao->prepare("SELECT * FROM usuario WHERE email=:email");
+        $sql->bindValue(":email", $obj->getEmail());
+        $sql->execute();
+        if($sql->rowCount()>0){
+            while($retorno = $sql->fetch()){
+                if($retorno["senha"] == $obj->getSenha()){
+                    return $retorno; //email e senha ok
+                }
+            }
+            return 1; //senha não bate
+        }else{
+            return 0; // email de cadastro
+        }
+    }
 }
 ?>
