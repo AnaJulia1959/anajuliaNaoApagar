@@ -23,25 +23,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 
-<h2>Login</h2>
+<div class="container">
+    <h2>Login</h2>
 
-<?php if (isset($erro)): ?>
-    <div class="alert alert-danger"><?php echo $erro; ?></div>
-<?php endif; ?>
+    <?php if (isset($erro)): ?>
+        <div class="alert alert-danger"><?php echo $erro; ?></div>
+    <?php endif; ?>
 
-<form method="post" class="form-login">
-    <div class="form-group">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-    </div>
-    <div class="form-group">
-        <label for="senha">Senha:</label>
-        <input type="password" id="senha" name="senha" required>
-    </div>
-    <div class="form-actions">
-        <button type="submit" class="btn">Entrar</button>
-        <a href="registrar.php" class="btn btn-secondary">Registrar</a>
-    </div>
-</form>
+    <form method="post" class="form-login">
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" required>
+        </div>
+        <div class="form-actions">
+            <button type="submit" class="btn">Entrar</button>
+            <a href="registrar.php" class="btn btn-secondary">Registrar</a>
+        </div>
+    </form>
+</div>
 
 <?php require_once '../includes/footer.php'; ?>
