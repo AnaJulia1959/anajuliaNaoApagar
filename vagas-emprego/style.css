@@ -1,0 +1,122 @@
+/* arquivo: style.css */
+
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.rounded-circle {
+    object-fit: cover;
+}
+
+.badge {
+    font-weight: 500;
+}
+
+.list-group-item.active {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+.table th {
+    font-weight: 600;
+}
+
+.form-control, .form-select {
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.btn {
+    border-radius: 5px;
+    padding: 8px 20px;
+}
+
+.alert {
+    border-radius: 5px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .card {
+        margin-bottom: 20px;
+    }
+}
+
+/* Rodapé fixo na parte inferior */
+footer {
+    background-color: #343a40; /* Cor de fundo escura */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: fixed; /* Fixa o rodapé */
+    bottom: 0; /* Cola no fundo */
+    width: 100%; /* Largura total */
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    z-index: 1000; /* Garante que fique acima de outros elementos */
+}
+
+/* Adicione margem no conteúdo principal para não ficar sob o rodapé */
+body {
+    margin-bottom: 80px; /* Ajuste conforme a altura do seu rodapé */
+}
+
+/* Se estiver usando Bootstrap, pode precisar desta regra adicional */
+.container {
+    padding-bottom: 20px;
+}
+footer {
+    border-top: 0.5px solid #dee2e6;
+}
+
+.btn-candidatar {
+    background-color: #28a745;
+    border-color: #28a745;
+    transition: all 0.3s;
+}
+.btn-candidatar:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+/* Estilo para as mensagens */
+.alert {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    min-width: 300px;
+    max-width: 80%;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    animation: slideDown 0.5s forwards;
+}
+
+@keyframes slideDown {
+    from { top: -100px; opacity: 0; }
+    to { top: 20px; opacity: 1; }
+}
+
+.alert-success {
+    background-color: #d1e7dd;
+    color: #0f5132;
+    border-color: #badbcc;
+}
+
+.btn-close {
+    padding: 0.75rem;
+}
