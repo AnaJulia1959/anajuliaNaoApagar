@@ -1,0 +1,662 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+:root {
+    --preto: #121212;
+    --cinza-escuro: #1c1c1c;
+    --cinza: #2c2c2c;
+    --cinza-claro: #3a3a3a;
+    --branco: #f5f5f5;
+    --cinza-texto: #bbbbbb;
+    --destaque: #6c757d; /* Cor neutra para substituir verde/azul/vermelho */
+
+    --sucesso: #4CAF50;
+    --erro: #f44336;
+    --espaco-sm: 10px;
+    --espaco-md: 16px;
+    --espaco-lg: 24px;
+    --borda-radius: 6px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--preto);
+    color: var(--branco);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+header {
+    background-color: var(--cinza-escuro);
+    padding: 20px 0;
+    border-bottom: 1px solid var(--cinza);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 0 20px;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    gap: 24px;
+    padding: 0;
+    margin: 0;
+}
+
+nav a {
+    color: var(--cinza-texto);
+    text-decoration: none; /* Removido sublinhado */
+    font-weight: 500;
+    font-size: 15px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--branco);
+    text-decoration: none; /* Garantindo que não apareça sublinhado no hover */
+}
+
+.search {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+.search form {
+    display: flex;
+    gap: 10px;
+}
+
+.search input {
+    padding: 10px;
+    background-color: var(--cinza);
+    border: none;
+    color: var(--branco);
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.search button {
+    padding: 10px 16px;
+    background-color: var(--destaque);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search button:hover {
+    background-color: var(--cinza);
+}
+
+.login-btn,
+.logout-btn,
+.admin-btn {
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none; /* Removido sublinhado */
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.login-btn {
+    background-color: transparent;
+    color: var(--branco);
+    border: 1px solid var(--cinza-claro);
+}
+
+.logout-btn {
+    background-color: var(--destaque);
+    color: white;
+}
+
+.admin-btn {
+    background-color: var(--cinza);
+    color: white;
+}
+
+.veiculos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.veiculo-card {
+    background-color: var(--cinza-escuro);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.veiculo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.veiculo-img {
+    height: 180px;
+    background-color: var(--cinza);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.veiculo-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sem-img {
+    color: var(--cinza-texto);
+    font-size: 14px;
+}
+
+.veiculo-info {
+    padding: 15px;
+}
+
+.veiculo-info h3 {
+    margin-bottom: 8px;
+    font-size: 18px;
+    color: var(--branco);
+}
+
+.preco {
+    color: var(--branco);
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.veiculo-detalhe {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.veiculo-imagem {
+    background-color: var(--cinza);
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+}
+
+.veiculo-dados h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.dados-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+
+    border-radius: 8px;
+}
+
+.dados-grid span {
+    font-size: 13px;
+    color: var(--cinza-texto);
+}
+
+.descricao h3 {
+    margin-bottom: 10px;
+}
+
+.login-container {
+    max-width: 400px;
+    margin: 50px auto;
+    background-color: var(--cinza-escuro);
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.login-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--cinza);
+    border: none;
+    color: var(--branco);
+    border-radius: 6px;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--destaque);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.erro {
+    background-color: rgba(108, 117, 125, 0.2);
+    color: var(--branco);
+    padding: 10px;
+    border-left: 4px solid var(--destaque);
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .search {
+        margin: 15px 0;
+        width: 100%;
+    }
+
+    .veiculo-detalhe {
+        grid-template-columns: 1fr;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-table {
+        display: block;
+        overflow-x: auto;
+    }
+}
+
+/* Remove sublinhado de TODOS os links em TODOS os estados */
+a, 
+a:link, 
+a:visited, 
+a:hover, 
+a:active {
+    text-decoration: none !important;
+}
+
+/* Remove sublinhado específico dos cards de veículos */
+.veiculo-card a,
+.veiculo-card a:hover {
+    text-decoration: none !important;
+}
+
+/* Remove sublinhado dos botões */
+.btn, 
+.btn:hover,
+.login-btn, 
+.logout-btn, 
+.admin-btn {
+    text-decoration: none !important;
+}
+
+/* Garante que todos os textos secundários estejam em cinza */
+.veiculo-meta, 
+.veiculo-info{
+    color: var(--cinza-texto);
+}
+
+
+
+
+
+
+
+
+
+/* Estilo para o painel administrativo */
+.admin-main {
+    margin-top: 30px;
+    color: var(--branco);
+}
+
+/* Título do painel */
+.admin-main h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+/* Cabeçalho da tabela e botões de ação */
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Botões de ação */
+.btn-add,
+.btn-save,
+.btn-cancel,
+.btn-edit,
+.btn-delete {
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none !important;
+    display: inline-block;
+}
+
+.btn-add {
+    background-color: var(--destaque);
+    color: var(--branco);
+}
+
+.btn-save {
+    background-color: var(--destaque);
+    color: white;
+}
+
+.btn-cancel {
+    background-color: var(--cinza);
+    color: white;
+}
+
+.btn-edit {
+    color: var(--destaque);
+    margin-right: 8px;
+}
+
+.btn-delete {
+    color: var(--erro);
+}
+
+.actions a {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--cinza-escuro);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.admin-table th,
+.admin-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--cinza);
+}
+
+.admin-table th {
+    background-color: var(--cinza);
+    color: var(--branco);
+}
+
+.admin-table tr:hover {
+    background-color: var(--cinza-claro);
+}
+
+/* Imagem da tabela */
+.table-img {
+    width: 80px;
+    height: auto;
+    border-radius: 4px;
+}
+
+/* Formulário administrativo */
+.admin-form {
+    background-color: var(--cinza-escuro);
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 700px;
+    margin: auto;
+    margin-bottom: 40px;
+}
+
+.admin-form .form-group {
+    margin-bottom: 15px;
+}
+
+.admin-form label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: var(--cinza-texto);
+}
+
+.admin-form input,
+.admin-form textarea,
+.admin-form select {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--cinza);
+    border: none;
+    color: var(--branco);
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+/* Navegação no topo do painel */
+.admin-nav {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.admin-nav a {
+    font-size: 14px;
+    padding: 6px 12px;
+    background-color: var(--cinza);
+    color: var(--cinza-texto);
+    border-radius: 6px;
+    transition: background-color 0.3s;
+}
+
+.admin-nav a:hover {
+    background-color: var(--destaque);
+    color: white;
+}
+
+/* Mensagem de imagem atual no formulário */
+.admin-form p {
+    font-size: 13px;
+    color: var(--cinza-texto);
+    margin-top: 8px;
+}
+
+@media (max-width: 768px) {
+    .admin-header {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-table {
+        display: block;
+        overflow-x: auto;
+    }
+}
+.alert {
+    padding: var(--espaco-sm) var(--espaco-md);
+    border-radius: var(--borda-radius);
+    margin-bottom: var(--espaco-lg);
+    font-size: 0.95rem;
+}
+
+.alert.success {
+    background-color: rgba(76, 175, 80, 0.2);
+    color: var(--branco);
+    border-left: 4px solid var(--sucesso);
+}
+
+.alert.error {
+    background-color: rgba(244, 67, 54, 0.2);
+    color: var(--branco);
+    border-left: 4px solid var(--erro);
+}
+
+
+.alert {
+    padding: var(--espaco-sm) var(--espaco-md);
+    border-radius: var(--borda-radius);
+    margin-bottom: var(--espaco-lg);
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+}
+
+.alert.success {
+    background-color: rgba(76, 175, 80, 0.1);
+    color: var(--sucesso);
+    border-left: 4px solid var(--sucesso);
+}
+
+.alert.error {
+    background-color: rgba(244, 67, 54, 0.1);
+    color: var(--erro);
+    border-left: 4px solid var(--erro);
+}
+
+.alert.success::before {
+    content: "✔️";
+    font-size: 1.2rem;
+}
+
+.alert.error::before {
+    content: "❌";
+    font-size: 1.2rem;
+}
+
+
+
+
+
+
+/* DETALHES VEÍCULO MODERNO */
+.veiculo-detalhe {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 40px;
+}
+
+.veiculo-imagem {
+    flex: 1 1 420px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.veiculo-imagem img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+.veiculo-dados {
+    flex: 1 1 380px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color: var(--branco);
+}
+
+.veiculo-dados h1 {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+.preco {
+    font-size: 26px;
+    font-weight: bold;
+    color: #cccccc;
+}
+
+.dados-grid {
+    border-radius: 12px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+gap: 15px;
+    font-size: 15px;
+}
+
+.dados-grid div span {
+    color: var(--cinza-texto);
+    display: block;
+    font-size: 13px;
+    margin: 4px;
+}
+
+.dados-grid strong {
+    font-size: 15px;
+    color: var(--branco);
+}
+
+.descricao {
+    background-color: var(--cinza-escuro);
+    border-radius: 12px;
+    padding: 20px;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.descricao h3 {
+    margin-bottom: 10px;
+    color: var(--branco);
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.logo-img {
+    height: 200px;
+    width: 200px;
+}
+
